@@ -1,0 +1,19 @@
+#progressContainer {
+    border: 1px solid #d4acae  ;
+    background-color: white;
+}
+
+#progressbar {
+    background:#d4acae  ;
+    display: flex; 
+    justify-content: center;
+    opacity: 0.8;
+
+
+}
+
+#progressContainer span{
+    font-size: 15px;;
+    color: white;
+
+}

@@ -1,0 +1,101 @@
+#chapterButtonsContainer {
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.backButton {
+  
+}
+.resultButton {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.chapterButton{
+    display: inline-block;
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+    width: 150px;
+    height: 35px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+.chapterButton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+.resultButton {
+  border: 3px solid  rgb(133, 125, 125);
+  border-radius: 5px;;
+}
+
+
+.nextButton {
+    background-color: #b7b9e1;
+    color: #FFFFFF;
+}
+.backButton {
+    background-color: #b7b9e1;
+    color: #FFFFFF;
+}
+  
+  
+  .nextButton span:after {
+    content: '\00bb';               
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  .nextButton:hover span {
+    padding-right: 25px;
+  }
+  .nextButton:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+
+  .backButton span:before {
+    content: '\00AB';               
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -20px;
+    transition: 0.5s;
+  }
+  .backButton:hover span {
+    padding-left: 25px;
+  }
+  .backButton:hover span:before {
+    opacity: 1;
+    left: 0;
+  }
+
+
+
+
+
+
+
+#chapterHeader {
+  background: #a2b9bc;
+  color: white;
+
+}
+#chapterHeadline {
+    display: flex;
+    justify-content: center;;
+}

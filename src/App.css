@@ -1,0 +1,297 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+
+#everythingExceptHeader {
+  margin: 10px;
+}
+
+
+
+
+.chapter {
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  */
+  grid-area: chapter;
+  overflow: hidden;
+  animation-name: appear;
+  animation-duration: 0.5s;
+  width: 100%;
+  
+}
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+#leftCol {
+  grid-area: left;
+}
+#chapterSelect {
+  width: 250px;
+  grid-area: right;
+
+}
+@media screen and (max-width: 992px) {
+  #main {
+      display: grid;
+      grid-template-areas:
+        'left right'
+        'chapter chapter';
+  }
+}
+@media screen and (max-width: 524px) {
+  #main {
+      display: grid;
+      grid-template-areas:
+        'left'
+        'right'
+        'chapter';
+  }
+}
+
+#main .myCard {
+  margin: 5px;
+}
+
+
+
+
+
+#chapterGrid {
+  width: auto;
+  display: grid;
+  justify-content: center;
+  grid-template-areas:
+    'item1 item2 item3'
+    'gridCenter gridCenter gridCenter '
+    'item4 item5 item6 ';
+}
+@media screen and (max-width: 992px) {
+  #gridFlash {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+.item1 { grid-area: item1; }
+.item2 { grid-area: item2; }
+.item3 { grid-area: item3; }
+.item4 { grid-area: item4; }
+.item5 { grid-area: item5; }
+
+
+@keyframes showCenter {
+  from {height: 0px; opacity: 0;}
+  to {height: auto; opacity: 0.7;}
+}
+@keyframes hideCenter {
+  from {height: auto; opacity: 1;}
+  to {height: 0px; opacity: 0;}
+}
+
+
+@keyframes gridCenterFlash {
+  0% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+}
+}
+
+
+
+.gridCenter {
+
+  grid-area: gridCenter;
+  visibility: hidden;
+  height:0;
+  overflow: hidden;
+  opacity: 0.7;
+
+
+  
+}
+.gridCenterFlash {
+  animation: gridCenterFlash 0.1s infinite ;
+  animation-iteration-count: 1
+}
+#gridFlash {
+  background: #365c96;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+}
+#gridFlash .circle{
+  height: 30px;
+  width: 30px;
+  background: white;
+
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.circle div{
+  font-weight: bold;
+  padding-bottom: 2px;
+  
+}
+.myButton {
+  box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #AD4257, 0 4px 2px rgba(0, 0, 0, .5);
+  text-shadow:-1px -1px 0 #A84155;
+  background-image:linear-gradient(to bottom, #d6cbd3, #D25068);
+  margin: 5px;
+  padding: 5px;
+  border-radius:5px;
+  cursor: pointer;
+  color: white
+}
+.myButton :hover{
+  opacity: 0.7;
+  
+}
+
+
+
+
+.markedChapter {
+  background: #365c96;
+  opacity: 0.7;
+  transition: opacity 0.5s ease-in-out;
+  color: white;
+}
+
+
+.chapterIcon {
+  background:#f0f4f8;
+  font-size: 40px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+
+
+
+
+
+#stars {
+  font-size: 40px;;
+}
+#leftCard {
+  width: 250px;
+  margin:  auto;
+  max-height  : 194px;
+  overflow : hidden;
+}
+
+
+.fa-chevron-down {
+  color: grey;
+  margin-top: 10px;
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
+    from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+
+#containerPinButton {
+  position: relative;
+}
+
+#pinButton {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 1;
+  height: 30px;
+  width: 30px;
+  
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#pinButton :hover{
+  opacity: 0.3;
+}
+.pinDown {
+  opacity: 0.3;
+  background: #d6cbd3;
+}
+
+@keyframes dissappear {
+  0% {width: 100%;}
+  
+  100% {width:0%;}
+}
+@keyframes appear {
+  0% {width: 0%;}
+  100% {width:100%;}
+}
+.cardDissapear {
+  overflow: hidden;
+  animation-name: dissappear;
+  animation-duration: 0.5s;
+  width: 0%;
+}
+.cardAppear {
+  overflow: hidden;
+  width: 0%;
+  animation-name: appear;
+  animation-duration: 0.5s;
+  width: 100%;
+}
+
+.result {
+  overflow: hidden;
+  animation-name: appear;
+  animation-duration: 0.5s;
+  width: 100%;
+  grid-area: chapter;
+}
+
+#chartContainer {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+#doughnut {
+  margin-top: -30px;
+  width: 200px;
+  height: 200px;
+}
+#barCHart {
+  margin-top: 20px;
+  width: 200px;
+  height: 200px;
+}
+
+
